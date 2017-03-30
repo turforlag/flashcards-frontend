@@ -1,0 +1,355 @@
+* {
+	box-sizing: border-box;
+}
+/*
+html, body {
+	height: 100vh;
+	font-size: 10px !important;
+}
+
+@media (max-width: 600px) {
+	html,
+	body {
+		font-size: 10px !important;
+	}
+}
+
+body {
+	font-family: sans-serif, "Trebuchet MS", Helvetica !important;
+}*/
+/*
+a {
+	color: rgb(34,118,214);
+}*/
+#PAFTOOLBAR{
+	visibility: hidden;
+	display: none;
+}
+
+.backHeader{
+    font-weight: bold;
+}
+
+#card .back{
+	padding-left: 20px;
+}
+
+.btnWrapper{
+	position: fixed;
+	bottom: 5px;
+	width: 100%;
+}
+
+.cardslider__cards {
+	width: 420px;
+	height: 420px;
+}
+
+.cardslider__card {
+	padding: 10px;
+	color: black;
+	font-size: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer; cursor: hand;
+}
+
+.cardslider__card.center {
+	text-align: center;
+}
+
+.speaker{
+	right: 0;
+    position: fixed;
+    margin-right: 20px;
+}
+
+.no-center {
+	display: block;
+}
+
+
+.methods {
+	overflow-y: scroll;
+	display: block;
+	height: 100%;
+	font-size: 1.4rem;
+}
+
+.methods code {
+	font-size: 1.4rem;
+}
+/*
+table {
+	width: 100%;
+}
+
+table td {
+	padding: 10px;
+}
+
+@media (max-width: 960px) {
+	table td {
+		display: block;
+	}
+}
+
+table tr.title td {
+	font-size: 2rem;
+	padding-top: 20px;
+	border-bottom: 1px solid black;
+}
+
+table tr td.center {
+	text-align: center;
+}
+
+@media (max-width: 960px) {
+	table tr td.center {
+		text-align: left;
+	}
+}
+
+table tr:nth-child(even) td {
+	background: rgba(34, 118, 214, .2);
+}*/
+/*
+header {
+	width: 100%;
+	position: absolute;
+	padding: 40px 40px 0;
+	color: white;
+	display: flex;
+	font-size: 1.6rem;
+	z-index: 10;
+}
+
+header h1 {
+	font-size: 1.6rem;
+	line-height: 1;
+}*/
+
+header .left,
+header .right {
+	flex-grow: 1;
+	flex-basis: 50%;
+	align-items: center;
+	display: flex;
+}
+
+header .right {
+	justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+	header .right img {
+		width: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	header {
+		text-align: center;
+		font-size: 2.6666666667rem;
+		flex-direction: column;
+		padding-bottom: 40px;
+	}
+
+	.mobile-smaller {
+		font-size: 1.4rem;
+	}
+}
+
+.logo {
+	margin-right: 8px;
+}
+
+.cardtitle {
+	font-size: 1.4rem;
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	display: block;
+}
+
+#card{
+	width: 100%;
+	height: 90%;
+	border: none;
+	background-color: transparent;
+	-webkit-box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
+	-moz-box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
+	box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
+}
+
+.card-img-top
+{
+	/*height: 100%;*/
+	width: 100%;
+	overflow: hidden;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-img-top70
+{
+	height: auto;
+	width: auto;
+	overflow: hidden;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+}
+
+
+.scale-right {
+    transform: scale(1.2) translate3d(40%, 0px, 5px) !important;
+}
+.scale-down {
+    transform: scale(1.2) translate3d(0px, 40%, 5px) !important;
+	
+}
+
+#btnKnow{
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+	width: auto;
+	height: auto;
+	font-size: 1.5rem;
+	background-color: white !important;
+	color: black !important;
+
+	padding: 15px;
+	position: absolute;
+	bottom: 5px;
+    border: 2px solid #e7e7e7;
+	background-image: none;
+}
+
+#btnKnow:hover {background-color: #e7e7e7;}
+
+.cardslider__card  {
+    background: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.perspective{
+  -webkit-perspective: 1000;
+     -moz-perspective: 1000;
+          perspective: 1000;	
+}
+/*
+li {
+  width: 100%;
+  height: 100%;
+  background:white;
+  border-radius: 10px;
+}*/
+
+.flipped {
+	-webkit-transform: rotateY(180deg) ;
+	-moz-transform: rotateY(180deg) ;
+    -o-transform: rotateY(180deg) ;
+	transform: rotateY(180deg) ;
+}
+
+#card {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+    -o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background-color: white;
+    height: 100%;
+	border-radius: 10px;
+}
+
+.front {
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	margin: 0 0 0 0;
+}
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	margin: 0 0 0 0;
+}
+
+#card.flipped {
+  transform: scale(1.0) translate3d(0%, 0px, 5px) rotateY( 180deg );
+}
+
+.card-text {
+	font-size: initial;
+}
+
+.blur {
+  z-index: -1;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='2');
+  overflow: hidden;
+}
+
+.blur:after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, .2);
+  position: absolute;
+}
+
+
+// Iphone 6 Portrait
+@media 
+and (min-width : 370px) 
+and (max-width : 667px) 
+{ 
+	ul#flashcards{
+		width:  300px;
+		height: 300px;
+		left: 50% !important;
+		top: 30% !important;
+	}
+}
