@@ -50,7 +50,7 @@ function test() {
 
             if (flashcard.length > 0) {
 				
-				$("#flashcard").load( "http://dev.turforlag.dk/flashcards/index.html", function() {
+				$("#flashcard").load( " https://turforlag.github.io/flashcards-frontend/index.html", function() {
 						console.log("DONE LOADING");
 				});
             } else {
