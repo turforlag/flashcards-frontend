@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
 	
 	$.ajax({
 	    type: 'POST',
-		url: 'http://dev.turforlag.dk/drupal/api/v1/flashcards/getall',
+		url: 'http://flashcards.turteori.dk/api/v1/flashcards/getall',
 	    data: '{"tag":"'+tags+'"}',
 	    success: doneLoading,
 	    error: function (xhr, ajaxOptions, thrownError) {
