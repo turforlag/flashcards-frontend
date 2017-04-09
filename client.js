@@ -49,8 +49,19 @@ function test() {
             var flashcard = $("#flashcard");
 
             if (flashcard.length > 0) {
+								$.ajax({
+					type: 'GET',
+					url: 'https://turforlag.github.io/flashcards-frontend/index.html',
+		           crossDomain: true,    
+                    xhrFields: {         
+				withCredentials: true 
+			   },
+			   success: function (data, textStatus, xhr) {
+
 				
-				$("#flashcard").load( " https://turforlag.github.io/flashcards-frontend/index.html", function() {
+			   }
+			});
+				$("#flashcard").load( "https://turforlag.github.io/flashcards-frontend/index.html", function() {
 						console.log("DONE LOADING");
 				});
             } else {
