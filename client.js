@@ -39,31 +39,16 @@ function GM_wait() {
 }
 
 function test() {
-
     jQuery(document).ready(function ($) {
-
         window.setTimeout(findElem, 300);
-
         function findElem() {
-
+	console.log("FIND ELEM");
             var flashcard = $("#flashcard");
 
-            if (flashcard.length > 0) {
-								$.ajax({
-					type: 'GET',
-					url: 'https://turforlag.github.io/flashcards-frontend/index.html',
-		           crossDomain: true,    
-                    xhrFields: {         
-				withCredentials: true 
-			   },
-			   success: function (data, textStatus, xhr) {
-
-				
-			   }
-			});
-				$("#flashcard").load( "https://turforlag.github.io/flashcards-frontend/index.html", function() {
-						console.log("DONE LOADING");
-				});
+            if (flashcard.length > 0) {			
+		$("#flashcard").load( "https://turforlag.github.io/flashcards-frontend/index.html", function() {
+			console.log("DONE LOADING");
+		});
             } else {
                 console.log("NOT FOUND");
                 window.setTimeout(findElem, 800);
