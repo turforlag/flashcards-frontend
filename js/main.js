@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
 	
 	$.ajax({
 	    type: 'POST',
-		url: 'http://flashcards.turteori.dk/api/v1/flashcards/getall',
+		url: 'https://flashcards.turteori.dk/api/v1/flashcards/getall',
 	    data: '{"tag":"'+tags+'"}',
 	    success: doneLoading,
 	    error: function (xhr, ajaxOptions, thrownError) {
@@ -56,10 +56,10 @@ jQuery(document).ready(function ($) {
 				vFact_HTML5Player.setEventHandler_OnChangePlaylistStatus(test); 
 			function test(newPlaylistStatus) {
 			 if (newPlaylistStatus == 1){
-				$(".speaker").attr("src","http://dev.turforlag.dk/flashcards/img/speaker.png");
+				$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker.png");
 				isPlaying = true;
 			 } else if (newPlaylistStatus == 0){
-				$(".speaker").attr("src","http://dev.turforlag.dk/flashcards/img/speaker_blank.png");
+				$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
 				isPlaying = false;
 			 }
 		 }
@@ -129,7 +129,7 @@ jQuery(document).ready(function ($) {
 				if (typeof vFact_HTML5Player !== 'undefined'){
 					vFact_dostop();	
 					isPlaying = false;
-					$(".speaker").attr("src","http://dev.turforlag.dk/flashcards/img/speaker_blank.png");
+					$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
 				}
 
 				cardslider2.knowCard();
@@ -152,7 +152,7 @@ jQuery(document).ready(function ($) {
 					if (typeof vFact_HTML5Player !== 'undefined'){
 						vFact_dostop();	
 						isPlaying = false;
-						$(".speaker").attr("src","http://dev.turforlag.dk/flashcards/img/speaker_blank.png");
+						$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
 					}
 
 				} else {
