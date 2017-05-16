@@ -21,6 +21,11 @@ body {
 a {
 	color: rgb(34,118,214);
 }*/
+
+#region-main{
+width: 100%;
+}
+
 #PAFTOOLBAR{
 	visibility: hidden;
 	display: none;
