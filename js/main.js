@@ -6,10 +6,10 @@ jQuery(document).ready(function ($) {
 		var parent = $("#flashcard").parent();
 		if (parent.width() <50 || parent.height <50){
 			$("#flashcard").width($("#flashcard").parent().parent().width());	
-			$("#flashcard").height($("#flashcard").parent().parent().height());
+			$("#flashcard").height(550);
 		}else {
 			$("#flashcard").width($("#flashcard").parent().width());	
-			$("#flashcard").height(500);
+			$("#flashcard").height(550);
 		}
 	}
 	
