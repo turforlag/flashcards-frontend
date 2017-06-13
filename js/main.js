@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
 
 				newElement += '<div id="'+i+'" class="card-block">';
 				if (element.backHeader != null){
-						newElement += '<p class="card-text backHeader">' + element.backHeader + '<img class="speaker" src="http://dev.turforlag.dk/flashcards/img/speaker_blank.png" width="30px" height="30px" /></p>';
+						newElement += '<p class="card-text backHeader">' + element.backHeader + '<img class="speaker" src="https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png" width="30px" height="30px" /></p>';
 				}
 				if (element.backText != null) {
 					newElement += '<p id="textContent' + i + '" class="card-text">' + element.backText + '</p>';
@@ -203,20 +203,4 @@ jQuery(document).ready(function ($) {
 	function errorLoading (){
 		alert("ERROR LOADING");
 	};
-
-	/*$.postJSON( "http://localhost/drupal/api/v1/flashcards/getall",{'tag': 'sign'}, function( data ) {
-		console.log(data);
-
-		var frontSideText = data.body.und["0"].value;
-		var frontSideImage = 'http://localhost/drupal/sites/default/files/' + data.field_front_side_image.und["0"].filename;
-
-		//var obj = jQuery.parseJSON(data);
-		//alert(data.body.und["0"].value);
-
-		$("img.card-img-top").attr("src", frontSideImage);
-
-		$(".card-text").html(data.body.und["0"].value);
-
-
-	});*/
 });
