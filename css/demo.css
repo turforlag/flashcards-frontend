@@ -33,6 +33,7 @@ a {
 
 #card .back{
 	padding-left: 20px;
+	width: 100%;
 }
 
 .btnWrapper{
@@ -185,6 +186,7 @@ header .right {
 	-webkit-box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
 	-moz-box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
 	box-shadow: -1px 1px 8px 0px rgb(37, 37, 37);
+	background: white;
 }
 
 .card-img-top
