@@ -192,12 +192,13 @@ header .right {
 .card-img-top
 {
 	/*height: 100%;*/
-	width: 100%;
+	/*width: 100%;*/
 	overflow: hidden;
 	display: block;
     margin-left: auto;
     margin-right: auto;
 	max-height: 100%;
+	max-width: 100%;
 }
 .card-img-top70
 {
