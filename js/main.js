@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
 		url: 'https://flashcards.turteori.dk/api/v1/flashcards/getall',
 	    data: '{"tag":"'+tags+'"}',
 	    success: doneLoading,
+		async: false,
 	    error: function (xhr, ajaxOptions, thrownError) {
         alert(thrownError);
 		},
