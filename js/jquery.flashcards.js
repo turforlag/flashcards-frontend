@@ -44,7 +44,11 @@
         isIos = true;
 		}
 	
-	var storage = Storages.localStorage;
+	var storage = null;
+	if (Storages != undefined){
+	  storage = Storages.localStorage;
+	}
+	
 	
 	var getInitialOrientation = function (){
 		var orientation = "";
@@ -308,7 +312,7 @@
 		},
 		saveToLocalStorage: function(moveToRight){
 			
-			if (moveToRight == true){
+			if (moveToRight == true && storage != null){
 				this.rightStack.push(this._activeCard.gid);
 				var myJsonString = JSON.stringify(this.rightStack);
 				storage.set(instanceId,myJsonString) 
