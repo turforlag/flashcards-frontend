@@ -5,6 +5,7 @@ jQuery(document).ready(function ($) {
 		
 		var regionMain =  $("#region-main");
 		if (regionMain.length > 0){
+			console.log("Region main");
 			$("#flashcard").width($("#region-main").width());
 			$("#flashcard").height(550);
 		} else {
