@@ -44,12 +44,13 @@
         isIos = true;
 		}
 	
+	
 	var storage = null;
-	if (Storages != undefined){
+	if(window.localStorage) {
 	  storage = Storages.localStorage;
+	} else {
+	  storage = null;
 	}
-	
-	
 	var getInitialOrientation = function (){
 		var orientation = "";
 		if (window.orientation == 0){
