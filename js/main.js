@@ -2,15 +2,21 @@ jQuery(document).ready(function ($) {
 
 	var tags = $("#flashcard").data("tags");
 	if("autosize" in $("#flashcard").data()) {
-  
-		var parent = $("#flashcard").parent();
-		if (parent.width() <50 || parent.height <50){
-			$("#flashcard").width($("#flashcard").parent().parent().width());	
+		
+		var regionMain =  $("#region-main");
+		if (regionMain.lenght > 0){
+			$("#flashcard").width($("#region-main").width());
 			$("#flashcard").height(550);
-		}else {
-			$("#flashcard").width($("#flashcard").parent().width());	
-			$("#flashcard").height(550);
-		}
+		} else {
+			var parent = $("#flashcard").parent();
+			if (parent.width() <50 || parent.height <50){
+				$("#flashcard").width($("#flashcard").parent().parent().width());	
+				$("#flashcard").height(550);
+			}else {
+				$("#flashcard").width($("#flashcard").parent().width());	
+				$("#flashcard").height(550);
+			}
+		}	
 	}
 	
 	var isMobile = false; //initiate as false
@@ -23,7 +29,6 @@ jQuery(document).ready(function ($) {
 		url: 'https://flashcards.turteori.dk/api/v1/flashcards/getall',
 	    data: '{"tag":"'+tags+'"}',
 	    success: doneLoading,
-		async: false,
 	    error: function (xhr, ajaxOptions, thrownError) {
         alert(thrownError);
 		},
