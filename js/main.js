@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 	if("autosize" in $("#flashcard").data()) {
 		
 		var regionMain =  $("#region-main");
-		if (regionMain.lenght > 0){
+		if (regionMain.length > 0){
 			$("#flashcard").width($("#region-main").width());
 			$("#flashcard").height(550);
 		} else {
