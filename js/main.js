@@ -1,5 +1,30 @@
+/*************************************************************************
+ *  [2016] - [2017] Turforlag.dk 
+ *  All Rights Reserved.
+ * 
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Tur Forlag and its suppliers,
+ * if any. The intellectual and technical concepts contained
+ * herein are proprietary to Tur Forlag and its suppliers and
+ * are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Tur Forlag Denmark.
+ *
+ * Version: 031017
+ * Author: vanja@vanjapetrovic.com
+ *
+ */
+ 
 jQuery(document).ready(function ($) {
 
+	 var debug = false;
+	 var endpoint = 'https://s3.eu-central-1.amazonaws.com/turforlag-flashcards-cdn/';
+	 if (localStorage.getItem("debug") != null){
+		debug = localStorage.getItem("debug");
+	 }
+ 
+ 
 	var tags = $("#flashcard").data("tags");
 	if("autosize" in $("#flashcard").data()) {
 		
@@ -41,11 +66,11 @@ jQuery(document).ready(function ($) {
 	function doneLoading(data) {
 
 		if (data.data_count == 0 ) {
-			alert("NO DATA");
+			alert("No data found by tags!");
 			return;
 		}
 		
-		console.log("DONE LOADING");
+		if (debug){console.log("Data received from API");}
 				
 		//TTS Setup
 		vFact_AllowHighLight = false;
@@ -63,10 +88,10 @@ jQuery(document).ready(function ($) {
 				vFact_HTML5Player.setEventHandler_OnChangePlaylistStatus(test); 
 			function test(newPlaylistStatus) {
 			 if (newPlaylistStatus == 1){
-				$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker.png");
+				$(".speaker").attr("src", endpoint+ "img/speaker.png");
 				isPlaying = true;
 			 } else if (newPlaylistStatus == 0){
-				$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
+				$(".speaker").attr("src", endpoint+ "img/speaker_blank.png");
 				isPlaying = false;
 			 }
 		 }
@@ -101,7 +126,7 @@ jQuery(document).ready(function ($) {
 
 				newElement += '<div id="'+i+'" class="card-block">';
 				if (element.backHeader != null){
-						newElement += '<p class="card-text backHeader">' + element.backHeader + '<img class="speaker" src="https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png" width="30px" height="30px" /></p>';
+						newElement += '<p class="card-text backHeader">' + element.backHeader + '<img class="speaker" src=' + endpoint +'img/speaker_blank.png width="30px" height="30px" /></p>';
 				}
 				if (element.backText != null) {
 					newElement += '<p id="textContent' + i + '" class="card-text">' + element.backText + '</p>';
@@ -123,6 +148,9 @@ jQuery(document).ready(function ($) {
 		}
 
 		var size = $(".card-text").css('font-size');
+		var textContainer = ($("ul#flashcards.cardslider__cards").height() / 80) * 100;
+		//alert(textContainer);
+		
 		//$(".card-text").css("line-height", (size+1)); 
 		$(".knowButton").css("font-size", size);
 		
@@ -136,7 +164,7 @@ jQuery(document).ready(function ($) {
 				if (typeof vFact_HTML5Player !== 'undefined'){
 					vFact_dostop();	
 					isPlaying = false;
-					$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
+					$(".speaker").attr("src",endpoint+ "img/speaker_blank.png");
 				}
 
 				cardslider2.knowCard();
@@ -159,7 +187,7 @@ jQuery(document).ready(function ($) {
 					if (typeof vFact_HTML5Player !== 'undefined'){
 						vFact_dostop();	
 						isPlaying = false;
-						$(".speaker").attr("src","https://turforlag.github.io/flashcards-frontend/img/speaker_blank.png");
+						$(".speaker").attr("src",endpoint+"img/speaker_blank.png");
 					}
 
 				} else {
@@ -208,6 +236,7 @@ jQuery(document).ready(function ($) {
 	};
 
 	function errorLoading (){
-		alert("ERROR LOADING");
+		if (debug){console.log("Error while receiving data from API");}
+		alert("Loading issue, please reload the page!");
 	};
 });
