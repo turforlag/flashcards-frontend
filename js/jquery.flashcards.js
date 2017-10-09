@@ -350,6 +350,10 @@
 			var that = this;
 			this.rightStack = numbers;
 			numbers.forEach(function(number){
+				if (that._cards[number] === 'undefined'){
+					storage.remove(instanceId);
+					location.reload();	
+				}
 				that._cards[number].elem.classList.add('cardslider__card--out');
 				that._cards[number].elem.classList.add('RIGHT');
 				that._cards[number].elem.style.zIndex = rightZ;

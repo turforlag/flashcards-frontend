@@ -138,6 +138,11 @@ jQuery(document).ready(function ($) {
     		$("#flashcards").append(newElement);
 		});
 		$(".flashcards").append('</ul>');
+		
+		if (typeof $.fn.cardslider === 'undefined') {
+			location.reload();
+			return;
+		}
 
 		var cardslider2 = $('.flashcards').cardslider().data('cardslider');
 		
@@ -149,13 +154,9 @@ jQuery(document).ready(function ($) {
 
 		var size = $(".card-text").css('font-size');
 		var textContainer = ($("ul#flashcards.cardslider__cards").height() / 80) * 100;
-		//alert(textContainer);
-		
-		//$(".card-text").css("line-height", (size+1)); 
+
 		$(".knowButton").css("font-size", size);
 		
-		
-
 			$(".knowButton").on("click", function(e) {
 				animationInProgress = true;
 			    cardslider2.currentCard.addClass("perspective");
